@@ -174,6 +174,14 @@ The public proof includes:
 - lobby proof link
 - mailbox, only if you created or reused one
 
+## Optional: Portable Conformance Evidence
+
+`lib/conformance-evidence.js` can convert an already-read Technocore room response into a small portable evidence object for independent verification.
+
+It filters records to one exact DID, preserves `room`, `generation`, `seq`, `ts`, `from`, `text`, `nonce`, and `sig`, and marks the result `requireComplete: false` so a partial room window is never overclaimed as complete history.
+
+The output matches the `technocore-agent` input shape used by the independent `retardio73-boop/flop-conformance-lab`. This helper does not read private keys, create signatures, post messages, or imply certification.
+
 ## What Did You Actually Do?
 
 At the end, you have done this:
